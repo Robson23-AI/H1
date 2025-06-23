@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szkolenia i rozwój – Robert</title>
+  <meta name="description" content="Szkolenia i certyfikaty ukończone przez Roberta w pierwszym półroczu 2025.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main, header, section {
+      text-align: center;
+    }
+    ul {
+      display: inline-block;
+      text-align: left;
+    }
+    img.certyfikat {
+      max-width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      margin: 20px auto;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="video/tlo-dashboard.mp4" type="video/mp4">
+</video>
+
+<nav style="text-align:left; margin: 20px;">
+  <a href="index.html?start=1"><button>← Powrót na stronę główną</button></a>
+</nav>
+
+<header>
+  <h1>Szkolenia i rozwój – H1 2025</h1>
+  <p>To półrocze było intensywne i pełne rozwoju – zarówno praktycznego, jak i teoretycznego. Ukończyłem kilka ważnych szkoleń, które bezpośrednio wpłynęły na jakość mojej pracy i pewność w codziennych działaniach.</p>
+</header>
+
+<main>
+  <section class="fade-in">
+    <h2>ServiceNow – Flow Designer & IntegrationHub</h2>
+    <p>Szkolenie obejmowało automatyzację procesów w ServiceNow z wykorzystaniem Flow Designera i IntegrationHub. Poznałem także podstawy tworzenia aplikacji, skryptów oraz analizę przyczyn źródłowych zgodnie z ITIL.</p>
+    <ul>
+      <li>Automatyzacja bez kodu (no-code/low-code)</li>
+      <li>Tworzenie prostych flow dla incydentów i zgłoszeń</li>
+      <li>Obsługa IntegrationHub i konektorów zewnętrznych</li>
+      <li>Przygotowanie do certyfikatu CSA (Certified System Administrator)</li>
+    </ul>
+    <img src="images/servicenow-cert.jpg" alt="Certyfikat ServiceNow" class="certyfikat">
+  </section>
+
+  <section class="fade-in">
+    <h2>Microsoft Hackathon 2025</h2>
+    <p>Wziąłem udział w wewnętrznym hackatonie organizowanym przez Microsoft, skierowanym do uczestników na poziomie średniozaawansowanym.  
+    Celem wydarzenia było stworzenie działającej aplikacji automatyzującej codzienne procesy w środowisku IT.</p>
+    <ul>
+      <li>Temat: automatyzacja i wykorzystanie AI w codziennej pracy zespołów</li>
+      <li>Zakres: Python, GUI (customtkinter), integracje z Microsoft Teams i Outlook</li>
+      <li>Elementy: analiza potrzeb użytkowników, testowanie, prezentacja funkcjonalności</li>
+      <li>Poziom: średniozaawansowany (zarówno w kodowaniu, jak i projektowaniu rozwiązań)</li>
+    </ul>
+    <p style="margin-top: 10px;">Udział w hackatonie pozwolił mi sprawdzić się w warunkach projektowych, w których liczy się szybkość działania, pomysłowość i dopasowanie do realnych potrzeb zespołu.</p>
+    <img src="images/microsoft-hackathon.jpg" alt="Certyfikat udziału w Hackathonie" class="certyfikat">
+  </section>
+
+  <section class="fade-in">
+    <h2>Podsumowanie</h2>
+    <p>To było naprawdę dynamiczne półrocze – pełne nauki, testowania nowych pomysłów i wdrażania innowacyjnych narzędzi.  
+    Z niecierpliwością czekam na drugą połowę roku, bo zapowiada się równie intensywnie i rozwojowo.</p>
+  </section>
+</main>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+  faders.forEach(f => observer.observe(f));
+</script>
+</body>
+</html>

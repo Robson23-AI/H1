@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickShare</title>
+  <meta name="description" content="QuickShare – aplikacja do wysyłki podsumowań zgłoszeń z Excela.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main, header, section {
+      text-align: center;
+    }
+    ul {
+      display: inline-block;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="video/tlo-dashboard.mp4" type="video/mp4">
+</video>
+
+  <nav style="text-align:left; margin: 20px;">
+    <a href="index.html?start=1"><button>← Powrót na stronę główną</button></a>
+  </nav>
+
+  <header>
+    <h1>QuickShare</h1>
+    <p>QuickShare to lekka aplikacja desktopowa do generowania podsumowań zgłoszeń z Excela i przygotowania wiadomości e-mail w Outlooku.</p>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>Główne funkcje</h2>
+      <ul>
+        <li>Wybór pliku Excel z danymi zgłoszeń</li>
+        <li>Filtrowanie zgłoszeń z wybranego tygodnia lub miesiąca</li>
+        <li>Zliczanie: wszystkich, nowych, rozwiązanych</li>
+        <li>Tworzenie gotowej wiadomości w Outlooku</li>
+        <li>Zapamiętywanie adresu i arkusza</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Wideo prezentacja</h2>
+      <video controls style="width:100%; max-width:720px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <source src="video/quickshare_demo.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje odtwarzania wideo.
+      </video>
+    </section>
+
+    <section class="fade-in">
+      <h2>Użyte technologie</h2>
+      <ul>
+        <li>Python</li>
+        <li>pandas, openpyxl</li>
+        <li>Outlook mail automation</li>
+        <li>GUI w PyInstaller</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    faders.forEach(f => observer.observe(f));
+  </script>
+</body>
+</html>

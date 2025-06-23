@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robert 2025 – Podsumowanie</title>
+  <meta name="description" content="Podsumowanie projektów i osiągnięć zespołu Service Desk w H1 2025. Automatyzacje, feedback, rozwój osobisty.">
+  <meta name="author" content="Robert Aleksander Łukowski">
+  <meta property="og:title" content="Robert 2025 – Podsumowanie H1">
+  <meta property="og:description" content="Zobacz, co udało się osiągnąć w pierwszym półroczu 2025.">
+  <meta property="og:image" content="images/placeholder.jpg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔽 TŁO WIDEO 🔽 -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/tlo-dashboard.mp4" type="video/mp4">
+    Twoja przeglądarka nie obsługuje wideo HTML5.
+  </video>
+  <!-- 🔼 KONIEC TŁA WIDEO 🔼 -->
+
+  <div id="intro-screen">
+  <video autoplay muted loop playsinline id="intro-bg-video">
+    <source src="video/tlo-dashboard.mp4" type="video/mp4">
+  </video>
+  <h1>Podsumowanie półrocza 2025</h1>
+  <p>Kliknij poniżej, aby rozpocząć podróż przez nasze wspólne sukcesy.</p>
+  <button onclick="startExperience()">Rozpocznij</button>
+</div>
+
+  <header>
+    <h1>Podsumowanie półrocza 2025</h1>
+    <p>
+      To był intensywny czas pełen rozwoju, szkoleń i wspólnych sukcesów. Udało nam się nie tylko wdrożyć innowacyjne rozwiązania i aplikacje, ale też wspólnie – jako zespół – osiągnąć bardzo dobre wyniki w projektach Varian i SX. Nasze zaangażowanie przełożyło się na <strong>zielone światło NPS</strong>. Było dużo pracy, ale też dużo radości i dobrej energii!
+    </p>
+  </header>
+
+  <nav id="section-nav">
+    <button onclick="scrollToSection('user-feedback')">Feedback</button>
+    <button onclick="scrollToSection('progress-bar-section')">Postęp</button>
+  </nav>
+
+  <section id="image-placeholder" class="fade-in">
+    <img src="images/placeholder.jpg" alt="Zdjęcie z pracy / feedback">
+  </section>
+
+  <section id="user-feedback" class="fade-in">
+    <h2>Co mówią użytkownicy?</h2>
+    <div class="carousel">
+      <div class="carousel-row">
+        <button class="nav prev">❮</button>
+        <img id="carousel-img" src="images/feedback1.png" alt="Feedback">
+        <button class="nav next">❯</button>
+      </div>
+      <p id="carousel-caption" class="carousel-caption">Użytkownik: Dziękuję za szybką pomoc!</p>
+    </div>
+  </section>
+
+  <section id="progress-bar-section" class="fade-in">
+    <h2>Postęp rozwiązywania zgłoszeń</h2>
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill" id="progress-bar">0%</div>
+    </div>
+  </section>
+
+  <section class="fade-in" id="projekty-linki" style="padding: 40px 20px; text-align: center;">
+    <h2>Moje projekty i szkolenia</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+
+      <a href="next-action.html" style="text-decoration: none;">
+        <div style="width: 280px; background: #e3f2fd; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s;">
+          <h3 style="margin-top: 0;">Next Action Tool</h3>
+          <p style="font-size: 0.95rem;">Automatyzacja przypomnień SLA i integracja ServiceNow z Teams i Outlook.</p>
+        </div>
+      </a>
+
+      <a href="quickshare.html" style="text-decoration: none;">
+        <div style="width: 280px; background: #e8f5e9; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s;">
+          <h3 style="margin-top: 0;">QuickShare App</h3>
+          <p style="font-size: 0.95rem;">Lekka aplikacja do zliczania i opisywania zgłoszeń zakończonych sukcesem.</p>
+        </div>
+      </a>
+
+      <a href="szkolenia.html" style="text-decoration: none;">
+        <div style="width: 280px; background: #fff3e0; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s;">
+          <h3 style="margin-top: 0;">Szkolenia i shadowing</h3>
+          <p style="font-size: 0.95rem;">Dokumentacja przeprowadzonych szkoleń z certyfikatami i feedbackiem.</p>
+        </div>
+      </a>
+
+	<a href="rozwoj.html" style="text-decoration: none;">
+  <div style="width: 280px; background: #ede7f6; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s;">
+    <h3 style="margin-top: 0;">Rozwój i certyfikaty</h3>
+    <p style="font-size: 0.95rem;">Podsumowanie szkoleń, udział w hackathonie i certyfikaty ukończone w H1 2025.</p>
+  </div>
+</a>
+
+
+    </div>
+  </section>
+
+  <div id="chat-widget">
+    <div id="chat-header">Asystent projektu</div>
+    <div id="chat-content">
+      <p class="chat-intro">Zapytaj mnie o:</p>
+      <button class="chat-question" data-question="Next Action Tool">Next Action Tool</button>
+      <button class="chat-question" data-question="Quick Share">Quick Share</button>
+      <button class="chat-question" data-question="Szkolenia zespołu">Szkolenia zespołu</button>
+      <button class="chat-question" data-question="Moje szkolenia i rozwój">Moje szkolenia i rozwój</button>
+      <button class="chat-question" data-question="Co nowego?">Co nowego?</button>
+      <button class="chat-question" data-question="O Robercie">O Robercie</button>
+      <div id="chat-response" class="chat-answer"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="chatbot.js"></script>
+
+</body>
+</html>

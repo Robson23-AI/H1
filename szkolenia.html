@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szkolenia – H1 2025</title>
+  <meta name="description" content="Opis szkoleń i wsparcia zespołu przez Roberta w H1 2025.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main, header, section {
+      text-align: center;
+    }
+    ul {
+      display: inline-block;
+      text-align: left;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="video/tlo-dashboard.mp4" type="video/mp4">
+</video>
+
+  <nav style="text-align:left; margin: 20px;">
+    <a href="index.html?start=1"><button>← Powrót na stronę główną</button></a>
+  </nav>
+
+  <header>
+    <h1>Szkolenia i Wsparcie Zespołu</h1>
+    <p>W pierwszej połowie 2025 roku aktywnie wspierałem rozwój kolegów i koleżanek z zespołu, prowadząc sesje szkoleniowe oraz shadowing.</p>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>Shadowing – Michał i Weronika</h2>
+      <p>W ramach procesu onboardingu przeprowadziłem serię sesji shadowingowych, które pomogły Michałowi i Weronice skutecznie wdrożyć się w pracę z systemem ServiceNow oraz w standardy obsługi klienta.</p>
+      <ul>
+        <li>Omówienie procesu obsługi zgłoszeń</li>
+        <li>Wspólna praca na żywym środowisku</li>
+        <li>Codzienny feedback i wsparcie przy pierwszych ticketach</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Szkolenie E2E dla zespołu</h2>
+      <p>W maju zorganizowałem szkolenie zespołowe z zakresu procesu <strong>E2E: Friendly Reminder</strong>, którego byłem współtwórcą.</p>
+      <ul>
+        <li>Przedstawienie logiki procesu i celów</li>
+        <li>Demo działania w ServiceNow</li>
+        <li>Szablony i notatki operacyjne dla zespołu</li>
+        <li>Sesja Q&A i scenariusze „co jeśli...”</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Opinie uczestników szkolenia</h2>
+      <p>Szkolenie E2E zostało pozytywnie ocenione przez uczestników. Poniżej znajdują się autentyczne wypowiedzi z formularza ankiety:</p>
+
+      <ul style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto; font-size: 1.05rem;">
+        <li style="margin-bottom: 20px;">
+          <strong>Grzegorz Skrzypczyk:</strong><br>
+          <em>„Powinny być wystawiane certyfikaty za udział w szkoleniu.”</em>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <strong>Miłosz Smaga:</strong><br>
+          <em>„Sprawniej się chyba nie da. Widać, że chłopaki nie robią tego od wczoraj ;)”</em>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <strong>Jaromir Walerys:</strong><br>
+          <em>„Zgłaszam wniosek o awans dla trenerów na stanowisko First Category On Site Trainer Bydgoszcz w celu przeprowadzenia podobnych szkoleń bezpośrednio w siedzibie firmy.”</em>
+        </li>
+      </ul>
+    </section>
+
+<section class="fade-in">
+  <h2>Przykładowy certyfikat</h2>
+  <p>Każdy uczestnik szkolenia E2E otrzymał imienny certyfikat potwierdzający udział. Poniżej znajduje się jego przykładowa wersja:</p>
+
+  <iframe src="certyfikaty/e2e-cert.pdf" 
+          width="100%" height="500" 
+          style="border: none; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
+  </iframe>
+</section>
+
+
+    <section class="fade-in">
+      <h2>Ocena szkolenia – dokumentacja</h2>
+      <p>Poniżej znajduje się formularz Microsoft Forms wykorzystany do oceny szkolenia E2E.</p>
+
+      <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=xg9EM8e3LEG7cw5wsBmNWhIzm1JUV_xOiYyL0p1kwwhUQUowUkUzMkNOSlBDWUtITzlFU0ZGUExXRy4u" 
+              width="100%" height="600" 
+              style="border:none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      </iframe>
+    </section>
+  </main>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    faders.forEach(f => observer.observe(f));
+  </script>
+</body>
+</html>

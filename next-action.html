@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Action Tool</title>
+  <meta name="description" content="Opis narzędzia Next Action Tool autorstwa Roberta.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main, header, section {
+      text-align: center;
+    }
+    ul {
+      display: inline-block;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="video/tlo-dashboard.mp4" type="video/mp4">
+</video>
+
+  <nav style="text-align:left; margin: 20px;">
+    <a href="index.html?start=1"><button>← Powrót na stronę główną</button></a>
+  </nav>
+
+  <header>
+    <h1>Next Action Tool</h1>
+    <p>To narzędzie automatyzuje przypomnienia o zgłoszeniach z ServiceNow, 
+       integrując się z Teams i Outlook, poprawiając efektywność zespołu SD.</p>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>Główne funkcje</h2>
+      <ul>
+        <li>Codzienne przypomnienia o "Next Action" w Teams</li>
+        <li>Automatyczne zaproszenia do Outlooka</li>
+        <li>Obsługa plików Excel jako źródła danych</li>
+        <li>Przypomnienia godzinowe</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Dlaczego to ważne?</h2>
+      <p>Projekt powstał z potrzeby porządku, produktywności i chęci podniesienia jakości wsparcia. 
+         Pomaga w zarządzaniu zadaniami i zapobiega przekroczeniom SLA.</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Wideo prezentacja</h2>
+      <video controls style="width:100%; max-width:720px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <source src="video/nextaction_demo.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje odtwarzania wideo.
+      </video>
+    </section>
+
+    <section class="fade-in">
+      <h2>Jak to działa?</h2>
+      <p>Narzędzie przetwarza dane z pliku Excel, wykrywa zgłoszenia wymagające akcji i wysyła:</p>
+      <ul>
+        <li>Powiadomienia do Microsoft Teams (Webhook)</li>
+        <li>Pliki ICS do Outlooka z przypomnieniami</li>
+        <li>Powiadomienia godzinowe do użytkownika</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Technologie i certyfikaty</h2>
+      <ul>
+        <li>Python (biblioteki: pandas, openpyxl, customtkinter)</li>
+        <li>Microsoft Teams Webhook</li>
+        <li>Outlook ICS (kalendarz)</li>
+        <li>ServiceNow – analiza i przypomnienia o SLA</li>
+        <li>Certyfikat: ServiceNow Associate Support Specialist</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Efekty</h2>
+      <p>Dzięki aplikacji Next Action Tool zespół szybciej reaguje na zgłoszenia, lepiej kontroluje terminy SLA i poprawia komunikację między członkami zespołu.</p>
+    </section>
+  </main>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    faders.forEach(f => observer.observe(f));
+  </script>
+</body>
+</html>
